@@ -1,5 +1,5 @@
 # VungTauViVu
-    This is a project written in above Node.js, Express, Passport, Mongoose, EJS and some other packages.
+This is a project written in above Node.js, Express, Passport, Mongoose, EJS and some other packages.    
 ## Usage
 
 Install packages
