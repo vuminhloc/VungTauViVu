@@ -1,0 +1,821 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tour Travel</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/assets/css/animate.css">
+
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/assets/css/icomoon.css">
+
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/assets/css/flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="/assets/fonts/flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+	</head>
+	<body>
+
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+		<nav class="colorlib-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-2">
+							<div id="colorlib-logo"><a href="/">Tour</a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1">
+							<ul>
+								<li class="active"><a href="/">Trang chủ</a></li>
+								<li class="has-dropdown">
+									<a href="/tours">Du lịch</a>
+									<ul class="dropdown">
+										<li><a href="#">Điểm đến</a></li>
+										<li><a href="#">Du lịch trên biển</a></li>
+										<li><a href="#">Khách sạn</a></li>
+										<li><a href="#">Đặt phòng</a></li>
+									</ul>
+								</li>
+								<li><a href="/hotels">Khách sạn</a></li>
+								<li><a href="/blog">Blog</a></li>
+								<li><a href="/about">Về chúng tôi</a></li>
+								<li><a href="/contact">Liên hệ với chúng tôi</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(/assets/images/img_bg_6.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Tour 2 Ngày</h2>
+				   					<h1>Tour Vũng Tàu</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(/assets/images/img_bg_2.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Du thuyền 3 ngày</h2>
+				   					<h1>Từ Hà Nội Đến Hạ Long</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(/assets/images/img_bg_5.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluids">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Khám phá công ty du lịch lớn nhất của chúng tôi</h2>
+				   					<h1>Đại Lý Du Lịch Của Chúng Tôi</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(/assets/images/img_bg_4.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   				<div class="slider-text-inner text-center">
+				   					<h2>Kinh nghiệm</h2>
+				   					<h1>Chuyến Đi Vui Nhất</h1>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		<div id="colorlib-reservation">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="search-wrap">
+						<!--<div class="container">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#flight"><i class="flaticon-plane"></i> Chuyến bay</a></li>
+								<li><a data-toggle="tab" href="#hotel"><i class="flaticon-resort"></i> Khách sạn</a></li>
+								<li><a data-toggle="tab" href="#car"><i class="flaticon-car"></i> Đặt xe</a></li>
+								<li><a data-toggle="tab" href="#cruises"><i class="flaticon-boat"></i> Du thuyền</a></li>
+							</ul>
+						</div>-->
+						<div class="tab-content">
+							<div id="flight" class="tab-pane fade in active">
+								<div id="flight" class="tab-pane fade in active">
+								<form method="post" class="colorlib-form">
+				          <div class="row">
+				          	<div class="col-md-2">
+				          	</div>
+				            <div class="col-md-4">
+				              <div class="form-group">
+				                <label for="date">Tìm kiếm:</label>
+				                <div class="form-field">
+				                  <input type="text" id="location" class="form-control" placeholder="Điểm đến, Khách sạn, Blog...">
+				                  <i class="icon icon-search"></i>
+				                </div>
+				              </div>
+				            </div>
+				            <div class="col-md-2">
+				              <div class="form-group">
+				                <label for="guests">Chủ đề: </label>
+				                <div class="form-field">
+				                  <i class="icon icon-arrow-down3"></i>
+				                    <select class="form-control">
+  											  <option selected>Địa điểm</option>
+  											  <option value="1">Khách sạn</option>
+  											  <option value="2">Blog</option>
+  											</select>
+				                </div>
+				              </div>
+				            </div>
+				                <!--<div class="col-md-2">
+				                  <div class="form-group">
+				                    <label for="date">Từ Ngày:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Chọn Ngày Đi">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-2">
+				                  <div class="form-group">
+				                    <label for="date">Đến Ngày:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Chọn Ngày Đến">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="guests">Số Người</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-arrow-down3"></i>
+				                      <select name="people" id="people" class="form-control">
+				                        <option value="#">1</option>
+				                        <option value="#">2</option>
+				                        <option value="#">3</option>
+				                        <option value="#">4</option>
+				                        <option value="#">5+</option>
+				                      </select>
+				                    </div>
+				                  </div>
+				                </div>-->
+				                <div class="col-md-2">
+				                  <input type="submit" name="submit" id="submit" value="Tìm Kiếm" class="btn btn-primary btn-block">
+				                </div>
+				              </div>
+				              <div class="col-md-2">
+				          		</div>
+				            </form>
+				         </div>
+				         <!--<div id="hotel" class="tab-pane fade">
+						      <form method="post" class="colorlib-form">
+				              	<div class="row">
+				              	 <div class="col-md-2">
+				              	 	<div class="booknow">
+				              	 		<h2>Book Now</h2>
+					              	 	<span>Giá trực tuyến rẻ nhất</span>
+				              	 	</div>
+				              	 </div>
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="date">Đăng ký phòng:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Ngày nhận phòng">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="date">Thanh toán phòng:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Ngày trả phòng">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-2">
+				                  <div class="form-group">
+				                    <label for="guests">Số Người</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-arrow-down3"></i>
+				                      <select name="people" id="people" class="form-control">
+				                        <option value="#">1</option>
+				                        <option value="#">2</option>
+				                        <option value="#">3</option>
+				                        <option value="#">4</option>
+				                        <option value="#">5+</option>
+				                      </select>
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-2">
+				                  <input type="submit" name="submit" id="submit" value="Tìm Phòng" class="btn btn-primary btn-block">
+				                </div>
+				              </div>
+				            </form>
+						   </div>
+						   <div id="car" class="tab-pane fade">
+						   	<form method="post" class="colorlib-form">
+				              	<div class="row">
+				              	 <div class="col-md-4">
+				              	 	<div class="form-group">
+				                    <label for="date">Điểm Đến:</label>
+				                    <div class="form-field">
+				                      <input type="text" id="location" class="form-control" placeholder="Tìm Kiếm Điểm Đến">
+				                    </div>
+				                  </div>
+				              	 </div>
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="date">Ngày Đi:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Ngày nhận phòng">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="date">Ngày Trở Về:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Ngày trả phòng">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-2">
+				                  <input type="submit" name="submit" id="submit" value="Tìm xe" class="btn btn-primary btn-block">
+				                </div>
+				              </div>
+				            </form>
+						   </div>
+						   <div id="cruises" class="tab-pane fade">
+						      <form method="post" class="colorlib-form">
+				              	<div class="row">
+				              	 <div class="col-md-4">
+				              	 	<div class="form-group">
+				                    <label for="date">Điểm Đến:</label>
+				                    <div class="form-field">
+				                      <input type="text" id="location" class="form-control" placeholder="Tìm Kiếm Điểm Đến">
+				                    </div>
+				                  </div>
+				              	 </div>
+				                <div class="col-md-3">
+				                  <div class="form-group">
+				                    <label for="date">Ngày Đi:</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-calendar2"></i>
+				                      <input type="text" id="date" class="form-control date" placeholder="Ngày nhận phòng">
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-1">
+				                  <div class="form-group">
+				                    <label for="guests">Thể loại</label>
+				                    <div class="form-field">
+				                      <i class="icon icon-arrow-down3"></i>
+				                      <select name="category" id="category" class="form-control">
+				                        <option value="#">Thượng hạng</option>
+				                        <option value="#">Siêu sang</option>
+				                        <option value="#">Tiết kiệm</option>
+				                        <option value="#">Sang trọng</option>
+				                      </select>
+				                    </div>
+				                  </div>
+				                </div>
+				                <div class="col-md-2">
+				                  <input type="submit" name="submit" id="submit" value="Tìm Du Thuyền" class="btn btn-primary btn-block">
+				                </div>
+				              </div>
+				            </form>
+						   </div>-->
+			         </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-services">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-md-3 animate-box text-center aside-stretch">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-around"></i>
+							</span>
+							<h3>Du lịch tuyệt vời</h3>
+							<p>Đà Nẵng nằm giữa ba di sản thế giới: cố đô Huế, phố cổ Hội An và thánh địa Mỹ Sơn. Đà Nẵng còn có nhiều danh thắng tuyệt đẹp say lòng du khách như Ngũ Hành Sơn, Bà Nà, bán đảo Sơn Trà, đèo Hải Vân, sông Hàn thơ mộng và cầu quay Sông Hàn – niềm tự hào của thành phố, và biển Mỹ Khê đẹp nhất hành tinh.</p>
+						</div>
+					</div>
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-boat"></i>
+							</span>
+							<h3>Du lịch trên biển</h3>
+							<p>Tour Du Thuyền Vịnh Hạ Long là một trong những tour rất được khách Việt Nam ưa thích. Các tour du thuyền Hạ Long sẽ mang đến cho du khách một cảm giác đầy thú vị khi màn đêm xuống giữa không gian mờ ảo, tham gia những hoạt động như chèo thuyền kayak, tắm biển trên vịnh, ngắm cảnh Hạ Long tuyệt đẹp khi hoàng hôn xuống hoặc bình minh lên, tập thái cực quyền, rồi đến hát karaoke, câu mực khi màn đêm buông xuống...</p>
+						</div>
+					</div>
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-car"></i>
+							</span>
+							<h3>Đặt chuyến đi cho bạn</h3>
+							<p>Di chuyển bằng chuyến xe đời mới, êm ái, nhẹ nhàng cùng đội ngũ hướng dẫn viên nhiệt tình chu đáo tạo cho quý khách có 1 chuyến đi đầy niềm vui, ấn tượng.</p>
+						</div>
+					</div>
+					<div class="col-md-3 animate-box text-center">
+						<div class="services">
+							<span class="icon">
+								<i class="flaticon-postcard"></i>
+							</span>
+							<h3>Hỗ trợ tốt</h3>
+							<p>Cập nhập tin tức, trả lời mọi thắc mắc của quý khách nhanh chóng.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-tour colorlib-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+						<h2>Điểm Đến Phổ Biến</h2>
+						<p>Đây là những địa điểm du lịch được rất nhiều lữ khách yêu thích và đánh giá tốt.</p>
+					</div>
+				</div>
+			</div>
+			<div class="tour-wrap">
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-9.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 10 Reviews</p>
+						<h2>Vũng Tàu, Việt Nam</h2>
+						<span class="city">Vũng Tàu, Việt Nam</span>
+						<!--<span class="price">1,790,000 đ</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-2.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Thailand</h2>
+						<span class="city">Athens, Greece</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-3.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Philippines</h2>
+						<span class="city">Lipa, Philippines</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-4.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Greece</h2>
+						<span class="city">Athens, Greece</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-5.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Greece</h2>
+						<span class="city">Athens, Greece</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-6.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Greece</h2>
+						<span class="city">Athens, Greece</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-7.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Greece</h2>
+						<span class="city">Athens, Greece</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+				<a href="#" class="tour-entry animate-box">
+					<div class="tour-img" style="background-image: url(/assets/images/tour-8.jpg);">
+					</div>
+					<span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2>Family Tour in Greece</h2>
+						<span class="city">Athens, Greece</span>
+						<!--<span class="price">$450</span>-->
+					</span>
+				</a>
+			</div>
+		</div>
+
+
+		<div id="colorlib-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+						<h2>Blog</h2>
+						<p>Nhóm này là nhóm của những thằng ngu.</p>
+					</div>
+				</div>
+				<div class="blog-flex">
+					<div class="f-entry-img" style="background-image: url(/assets/images/blog-3.jpg);">
+					</div>
+					<div class="blog-entry aside-stretch-right">
+						<div class="row">
+							<div class="col-md-12 animate-box">
+								<a href="blog.html" class="blog-post">
+									<span class="img" style="background-image: url(/assets/images/blog-1.jpg);"></span>
+									<div class="desc">
+										<span class="date">May 22, 2020</span>
+										<h3>Hướng dẫn chọn một bữa ăn tốt nhất</h3>
+										<span class="cat">Hoạt động</span>
+									</div>
+								</a>
+							</div>
+							<div class="col-md-12 animate-box">
+								<a href="blog.html" class="blog-post">
+									<span class="img" style="background-image: url(/assets/images/blog-2.jpg);"></span>
+									<div class="desc">
+										<span class="date">May 22, 2020</span>
+										<h3>Làm thế nào 5 người này tìm thấy con đường đến chuyến đi mơ ước của họ</h3>
+										<span class="cat">Hoạt động</span>
+									</div>
+								</a>
+							</div>
+							<div class="col-md-12 animate-box">
+								<a href="blog.html" class="blog-post">
+									<span class="img" style="background-image: url(/assets/images/blog-4.jpg);"></span>
+									<div class="desc">
+										<span class="date">May 22, 2020</span>
+										<h3>Tour du lịch chỉ dành cho bạn</h3>
+										<span class="cat">Hoạt động</span>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-intro" class="intro-img" style="background-image: url(/assets/images/cover-img-1.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 animate-box">
+						<div class="intro-desc">
+							<div class="text-salebox">
+								<div class="text-lefts">
+									<div class="sale-box">
+										<div class="sale-box-top">
+											<h2 class="number">45</h2>
+											<span class="sup-1">%</span>
+											<span class="sup-2">Off</span>
+										</div>
+										<h2 class="text-sale">Sale</h2>
+									</div>
+								</div>
+								<div class="text-rights">
+									<h3 class="title">Chỉ duy nhất cho nhanh nhất!</h3>
+									<p>Đây là một đợt giảm giá lớn nhất trong năm nhằm giúp quảng bá dịch vụ của công ty và khu du lịch tiềm năng đang phát triển của Vũng Tàu.</p>
+									<p><a href="#" class="btn btn-primary">Book Now</a> <a href="#" class="btn btn-primary btn-outline">Đọc thêm</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 animate-box">
+						<div class="video-wrap">
+							<div class="video colorlib-video" style="background-image: url(/assets/images/img_bg_2.jpg);">
+								<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video"></i></a>
+								<div class="video-overlay"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-hotel">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+						<h2>Khách sạn được đề xuất</h2>
+						<p>Khách sạn của những thằng điên.</p>
+					</div>
+				</div>
+				<div class="row">
+						<div class="owl-carousel">
+							<div class="item">
+								<div class="hotel-entry">
+									<a href="hotels.html" class="hotel-img" style="background-image: url(/assets/images/hotel-2.jpg);">
+										<p class="price"><span>$000</span><small> /night</small></p>
+									</a>
+									<div class="desc">
+										<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 32 Reviews</p>
+										<h3><a href="#">The Emperial Hotel</a></h3>
+										<span class="place">Vung Tau, Vietnam</span>
+										<p>Tâm làm phần mô tả khách sạn.</p>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="hotel-entry">
+									<a href="hotels.html" class="hotel-img" style="background-image: url(/assets/images/hotel-3.jpg);">
+										<p class="price"><span>$000</span><small> /night</small></p>
+									</a>
+									<div class="desc">
+										<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 32 Reviews</p>
+										<h3><a href="#">Ho Tram Beach Resort & Spa</a></h3>
+										<span class="place">Vung Tau, Vietnam</span>
+										<p>Tâm làm phần mô tả khách sạn.</p>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="hotel-entry">
+									<a href="hotels.html" class="hotel-img" style="background-image: url(/assets/images/hotel-4.jpg);">
+										<p class="price"><span>$000</span><small> /night</small></p>
+									</a>
+									<div class="desc">
+										<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 32 Reviews</p>
+										<h3><a href="#">Malibu Hotel</a></h3>
+										<span class="place">Vung Tau, Vietnam</span>
+										<p>Tâm làm phần mô tả khách sạn.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-testimony" class="colorlib-light-grey">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+						<h2>Ý kiến khách hàng</h2>
+						<p>Tâm viết chú thích.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 animate-box">
+						<div class="owl-carousel2">
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url(/assets/images/person1.jpg);"></span>
+									<span class="user">Alysha Myers</span>
+									<small>Miami Florida, USA</small>
+									<blockquote>
+										<p>Vung Tau is one of the best tourist destinations in Vietnam.</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url(/assets/images/person2.jpg);"></span>
+									<span class="user">James Fisher</span>
+									<small>New York, USA</small>
+									<blockquote>
+										<p>Vung Tau is one of the best tourist destinations in Vietnam.</p>
+									</blockquote>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimony text-center">
+									<span class="img-user" style="background-image: url(/assets/images/person3.jpg);"></span>
+									<span class="user">Thu Trang</span>
+									<small>Vung Tau, Vietnam</small>
+									<blockquote>
+										<p>Vung Tau is one of the best tourist destinations in Vietnam và Thanh rất đẹp trai.</p>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!---------------------------------------------------- Footer ----------------------------------------------------------------------->
+
+		<div id="colorlib-subscribe" style="background-image: url(assets/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+						<h2>Đăng ký để nhận thông báo</h2>
+						<p>Đăng ký để nhận danh sách tin nhắn cập nhập và giảm giá nhanh nhất.</p>
+						<form class="form-inline qbstp-header-subscribe">
+							<div class="row">
+								<div class="col-md-12 col-md-offset-0">
+									<div class="form-group">
+										<input type="email" value name="EMAIL" class="form-control" id="email" placeholder="Nhập Email của bạn">
+										<button type="submit" class="btn btn-primary">Đăng ký</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer id="colorlib-footer" role="contentinfo">
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-4 colorlib-widget">
+						<h4>VIVU Vũng Tàu</h4>
+						<p>Copyright ©2020 All rights reserved | This template is made with by Tien Thanh</p>
+						<p>
+							<ul class="colorlib-social-icons">
+								<li><a href="#"><i class="icon-twitter"></i></a></li>
+								<li><a href="#"><i class="icon-facebook"></i></a></li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-md-4 colorlib-widget">
+						<h4>Blog</h4>
+						<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></li>
+								<li><a href="#">Tour du lịch chỉ dành cho bạn</a></li>
+							</ul>
+						</p>
+					</div>
+					<!--<div class="col-md-2 colorlib-widget">
+						<h4>Book Now</h4>
+						<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#">Chuyến bay</a></li>
+								<li><a href="#">Khách sạn</a></li>
+								<li><a href="#">Tour</a></li>
+								<li><a href="#">Đặt xe</a></li>
+								<li><a href="#">Beach & Resorts</a></li>
+								<li><a href="#">Du thuyền</a></li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-md-2 colorlib-widget">
+						<h4>Top Deals</h4>
+						<p>
+							<ul class="colorlib-footer-links">
+								<li><a href="#">Pullman Vung Tau</a></li>
+								<li><a href="#">The Emperial Hotel</a></li>
+								<li><a href="#">Ho Tram Beach Resort</a></li>
+								<li><a href="#">Malibu Hotel</a></li>
+							</ul>
+						</p>
+					</div>
+					<div class="col-md-2">
+						<h4>Blog</h4>
+						<ul class="colorlib-footer-links">
+							<li><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></li>
+							<li><a href="#">Làm thế nào 5 người này tìm thấy con đường đến chuyến đi mơ ước của họ</a></li>
+							<li><a href="#">Tour du lịch chỉ dành cho bạn</a></li>
+						</ul>
+					</div>-->
+
+					<div class="col-md-4 colorlib-widget">
+						<h4>Thông tin liên hệ</h4>
+						<ul class="colorlib-footer-links">
+							<li>123 Huyền Trân Công Chúa, <br> Phường 8, Bà Rịa - Vũng Tàu</li>
+							<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+							<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+							<li><a href="#">yoursite.com</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--<div class="row">
+					<div class="col-md-12 text-center">
+						<p>
+
+							Copyright &copy;<script>document.write(new Date().getFullYear())</script>
+							All rights reserved | Thằng Tâm tự làm.
+						</p>
+					</div>
+				</div>-->
+			</div>
+		</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+	<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/5f23c8701a544e2a7275b240/default';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="/assets/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="/assets/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="/assets/js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/magnific-popup-options.js"></script>
+	<!-- Date Picker -->
+	<script src="/assets/js/bootstrap-datepicker.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="/assets/js/jquery.stellar.min.js"></script>
+	<!-- Main -->
+	<script src="/assets/js/main.js"></script>
+	</body>
+</html>
+

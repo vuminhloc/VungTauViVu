@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <blockquote class="blockquote text-center">
+        <p class="mb-0">Show list Tours</p>
+    </blockquote>
+    <a  href="/admin/tour/create">Create</a>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">DD/MM/YYYY</th>
+            <th scope="col">Link</th>
+            <th scope="col">Update</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <%  tours.forEach(function(item,index){ %>
+        <tbody>
+          <tr>
+            <th scope="row"><%= index %></th>
+            <td><%= item.Name %></td>
+            <td><%= item.date %></td>
+            <td><a href="/tours/<%= item._id %>">View</a></td>
+            <td><a href="/admin/tour/update/<%= item._id %>">Update</a></td>
+            <td>
+              <form action="/admin/tour", method="POST">
+                <button type="submit" class="btn btn-primary" name="id" value="<%= item._id %>" >Delete</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+        <% }) %>
+      </table>
+</body>
+</html>

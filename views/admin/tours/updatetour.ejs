@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/createuser.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container-fluid" id="page">
+      <div class="title">
+          <h1>Update Tours</h1>
+          <h1>ID: <%= tour._id %></h1>
+      </div>
+      <form action="/admin/tour/update/<%= tour._id %>", method="POST">
+        
+          <label for="formGroupExampleInput">Name</label>
+          <input type="text" class="form-control" name="name">
+         
+              <label for="exampleFormControlTextarea1">Description</label>
+              <textarea class="form-control"  name="Description" ></textarea>
+          
+          <label for="formGroupExampleInput">Details</label>
+          
+              <label for="phone" >Price:</label>
+              <input type="phone" class="form-control" name="Price"   >
+            
+              <label for="phone">Hotel:</label>
+              <input type="phone" class="form-control" name="Hotel"  >
+         
+              <label for="phone">Rooms:</label>
+              <input type="phone" class="form-control" name="Rooms"   >
+            
+              <label for="address"> Region:</label>
+              <input type="address" class="form-control" name="Region"   >
+          
+          <label for="formGroupExampleInput">Location</label><br>
+          <label for="formGroupExampleInput">Contact</label>
+         
+              <label for="address">Email:</label>
+              <input type="address"name="Email" class="form-control"   >
+           
+              <label for="phone">Website:</label>
+              <input type="phone"name="Website" class="form-control"   >
+           
+              <label for="address">Phone:</label>
+              <input type="address"name="Phone" class="form-control"   >
+            
+              <label for="address"> Address:</label>
+              <input type="address"name="Address" class="form-control"   >
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+</body>
+</html>
