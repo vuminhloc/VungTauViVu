@@ -22,6 +22,14 @@ Admin_router.get("/hotel",function(req,res){
         })
     })
 })
+Admin_router.get("/hotel/createhotel",function(req,res){
+    HotelsModel.find()
+    .then(function(doc){
+        res.render('./admin/Hotel/createhotel',{
+            hotels:doc,
+        })
+    })
+})
 
 Admin_router.get("/tour",function(req,res){
     ToursModel.find()

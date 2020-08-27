@@ -81,50 +81,9 @@
                         <h1 class="mt-4">Hotels</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Hotels</li>
+                            <li class="breadcrumb-item active"><a href="/admin/hotel">Hotels</a></li>
+                            <li class="breadcrumb-item active">Create</li>
                         </ol>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                A list of hotels is currently listed with the website VungTauViVu
-                            </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                DataTable Hotels
-                                <a href="/admin/hotel/createhotel"><button type="button" class="btn btn-primary float-right" >Create</button></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Description</th>
-                                                <th>Date</th>
-                                                <th>Room Rates</th>
-                                                <th>View-Hotel</th>
-                                                <th>Update</th>
-                                                <th>Remove</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <%  hotels.forEach(function(item){ %>
-                                            <tr>
-                                                <td><%= item.Name %></td>
-                                                <td><%= item.Description.slice(0,35)+"....." %></td>
-                                                <td>Date</td>
-                                                <td><%= item.Details.Price %></td>
-                                                <td><a href="/hotels/<%= item._id %>">View</a></td>
-                                                <td>Update</td>
-                                                <td>Remove</td>
-                                            </tr>
-                                            <% }) %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
