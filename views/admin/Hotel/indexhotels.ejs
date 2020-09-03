@@ -100,7 +100,6 @@
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Description</th>
                                                 <th>Date</th>
                                                 <th>Room Rates</th>
                                                 <th>View-Hotel</th>
@@ -112,12 +111,15 @@
                                             <%  hotels.forEach(function(item){ %>
                                             <tr>
                                                 <td><%= item.Name %></td>
-                                                <td><%= item.Description.slice(0,35)+"....." %></td>
                                                 <td>Date</td>
                                                 <td><%= item.Details.Price %></td>
                                                 <td><a href="/hotels/<%= item._id %>">View</a></td>
-                                                <td>Update</td>
-                                                <td>Remove</td>
+                                                <td><a href="/admin/hotel/update/<%= item._id %>">Update</a></td>
+                                                <td>
+                                                    <form action="/admin/hotel", method="POST">
+                                                      <button type="submit" class="btn btn-primary" name="id" value="<%= item._id %>" >Delete</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             <% }) %>
                                         </tbody>

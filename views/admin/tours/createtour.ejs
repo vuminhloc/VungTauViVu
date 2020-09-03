@@ -14,42 +14,20 @@
           <h1>Create Tours</h1>
       </div>
       <form action="/admin/tour/create", method="POST">
-
-          <label for="formGroupExampleInput">Name</label>
-          <input type="text" class="form-control" name="name">
-
-              <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control"  name="Description" ></textarea>
-
-          <label for="formGroupExampleInput">Details</label>
-
-              <label for="number" >Price:</label>
-              <input type="phone" class="form-control" name="Price"   >
-
-              <label for="phone">Hotel:</label>
-              <input type="phone" class="form-control" name="Hotel"  >
-
-              <label for="phone">Rooms:</label>
-              <input type="phone" class="form-control" name="Rooms"   >
-
-              <label for="address"> Region:</label>
-              <input type="address" class="form-control" name="Region"   >
-
-          <label for="formGroupExampleInput">Location</label><br>
-          <label for="formGroupExampleInput">Contact</label>
-
-              <label for="address">Email:</label>
-              <input type="address"name="Email" class="form-control"   >
-
-              <label for="phone">Website:</label>
-              <input type="phone"name="Website" class="form-control"   >
-
-              <label for="address">Phone:</label>
-              <input type="address"name="Phone" class="form-control"   >
-
-              <label for="address"> Address:</label>
-              <input type="address"name="Address" class="form-control"   >
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
 

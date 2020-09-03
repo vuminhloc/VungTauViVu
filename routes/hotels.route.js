@@ -48,7 +48,8 @@ route.get("/search",function(req,res){
     // var xoa_dau1 = xoa_dau(req.query.q)
     var regex = new RegExp(req.query.q,"gi")
     HotelModel.find({ "Name" : { $regex: regex}}).sort({'Details.Price':parseInt(gia)})
-    .then((result)=>{   
+    .then((result)=>{  
+         
         var sumpage = Math.ceil((result.length/6));
         res.render("hotels",{hotels:result.slice(Start,end),pagination:sumpage,page:page,sumpage:sumpage,q:q,gia:gia})
     })
@@ -57,7 +58,7 @@ route.get("/search",function(req,res){
 route.get("/:id",function(req,res){
     HotelModel.findById({_id : req.params.id})
     .then((result)=>{
-        res.render("view-hotels")
+        res.render("view-hotels",{hotels:result})
     })
     .catch(errr=>{res.render('404')});
 })

@@ -86,56 +86,56 @@
                         </ol>
                     </div>
                     
-                    <form  action="/admin/hotel/createhotel" method="POST" class="card-body"  enctype="multipart/form-data">
+                    <form  action="/admin/hotel/update/<%= hotels._id %>" method="POST" class="card-body"  enctype="multipart/form-data">
                         <label for="formGroupExampleInput">MetaTitle</label>
-                        <input type="text" class="form-control" name="MetaTitle">
-                        <label for="formGroupExampleInput">Meta Description</label>
-                        <input type="text" class="form-control" name="Metadescription">
+                        <input type="text" class="form-control" value="<%= hotels.MetaTitle %>" name="MetaTitle">
                         <label for="formGroupExampleInput">Meta Keywords</label>
-                        <input type="text" class="form-control" name="Metakeywords">
+                        <input type="text" class="form-control" value="<%= hotels.Keywords %>" name="Metadescription">
+                        <label for="formGroupExampleInput">Meta Keywords</label>
+                        <input type="text" class="form-control" value="<%= hotels.MetaTitle %>" name="Metakeywords">
                         
                         <label for="formGroupExampleInput">Banner</label><br>
                         <input type="file"  name="Banner"><br>
 
                         <label for="formGroupExampleInput">Name</label>
-                        <input type="text" class="form-control" name="Name"><br>
+                        <input type="text" class="form-control" value="<%= hotels.Name %>" name="Name"><br>
 
                         <label for="formGroupExampleInput">Img</label><br>
                         <input type="file" multiple="multiple"  name="Img"><br>
               
                         <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea class="form-control"  name="Description" ></textarea>
+                        <textarea class="form-control" value="<%= hotels.Description %>" name="Description" ></textarea>
               
               
                             <label for="number" >Details Price:</label>
-                            <input type="phone" class="form-control" name="Price"   >
+                            <input type="phone" class="form-control" value="<%= hotels.Details.Price %>" name="Price"   >
               
                             <label for="phone">Details Hotel class:</label>
-                            <input type="phone" class="form-control" name="class"  >
+                            <input type="phone" class="form-control" value="<%= hotels.Details.class %>" name="class"  >
               
                             <label for="phone">Details Rooms:</label>
-                            <input type="phone" class="form-control" name="Rooms"   >
+                            <input type="phone" class="form-control" value="<%= hotels.Details.Rooms %>" name="Rooms"   >
               
                             <label for="address">Details Region:</label>
-                            <input type="address" class="form-control" name="Region"   >
+                            <input type="address" class="form-control" value="<%= hotels.Details.Region %>" name="Region"   >
               
                         
                         <label for="formGroupExampleInput">Location</label>
-                        <input type="text" class="form-control" name="Location"><br>
+                        <input type="text" class="form-control" value="<%= hotels.Details.Location %>" name="Location"><br>
 
                         <label for="formGroupExampleInput">Contact</label>
               
                             <label for="address">Contact Email:</label>
-                            <input type="address"name="Email" class="form-control"   >
+                            <input type="address"name="Email" value="<%= hotels.Contact.Email %>" class="form-control"   >
               
                             <label for="phone">Contact Website:</label>
-                            <input type="phone"name="Website" class="form-control"   >
+                            <input type="phone"name="Website" value="<%= hotels.Contact.Website  %>" class="form-control"   >
               
                             <label for="address">Contact Phone:</label>
-                            <input type="address"name="Phone" class="form-control"   >
+                            <input type="address"name="Phone" value="<%= hotels.Contact.Phone %>" class="form-control"   >
               
                             <label for="address">Contact Address:</label>
-                            <input type="address"name="Address" class="form-control"   >
+                            <input type="address"name="Address" value="<%= hotels.Contact.Address %>" class="form-control"   >
                         <label for="formGroupExampleInput">Type</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Nghỉ Dưỡng" id="defaultCheck1" name="Type" >

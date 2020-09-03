@@ -2,22 +2,30 @@ const mongoose = require("mongoose")
 mongoose.connect("mongodb://localhost/MyWebsite"); 
 
 const HotelsSchema = new mongoose.Schema({
-    Banner:String,
-    Name:String,
-    Description:String,
-    Details:{
-        Price:Number,
-        Location:String,
-        HotelSart:Number,
-    },
+    MetaTitle:String,
+    MetaDescription: String,
+    MetaKeywords: String,
+    Banner:Array,
+    Name: String,
     Img:Array,
-    Amenities:{
-        PrivateAccess:String,
-        Parking:String,
-        Room:Number,
-        Views:String
+    Description: String,
+    Details:{
+        Price:String,
+        Hotel:Number,
+        Rooms:Number,
+        Region:String   
     },
-    Keyword:String
+    date: String,
+    Location: String,
+    Contact:{
+        Email:String,
+        Website: String,
+        Phone:Number,
+        Address:String
+    },
+    Type:Array,
+    Author:String,
+    Authorid:String
 })
 
 const Hotel = mongoose.model('Hotels',HotelsSchema,'Hotels');

@@ -1,155 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hotel</title>
-  <link rel="stylesheet" href="hotels.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <div id="fb-root"></div>
-
-
-  <!-- Font Awsome -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= hotels.MetaTitle %></title>
+    <meta name="description" content="<%= hotels.MetaDescription %>">
+    <meta name="keywords" content="<%= hotels.MetaKeywords %>">
+    <meta name="author" content="<%= hotels.Author %>">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/view-hotel.css">
+    <script src="https://kit.fontawesome.com/a885e11261.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <nav class="colorlib-nav" role="navigation">
-    <div class="top-menu">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-2">
-            <div id="colorlib-logo"><a href="index.html">Tour</a></div>
-          </div>
-          <div class="col-xs-10 text-right menu-1">
+    <div id="banner" style="background-image:linear-gradient(0,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0)) ,url('/assets/upload/<%= hotels.Banner[0].filename %>') ;">
+        <div id="container">
+            <div class="iconbanner">
+                <i class="fas fa-hotel" ></i>
+            </div>
+            <div class="h1banner">
+                <h1><%= hotels.Name %><i class="far fa-check-circle"></i></h1>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <div class="moneybanner">
+                <i class="far fa-money-bill-alt"><%= hotels.Details.Price %></i>
+            </div>
+            <div class="Mapbanner">
+                <i class="fas fa-map-marker-alt"></i> <i>Vũng Tàu</i>
+            </div>
+            <div class="Mapbanner">
+                <i class="fas fa-umbrella-beach"></i><i><%= hotels.Type %></i>
+            </div>
+            <div class="Sharebanner">
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-share-alt"></i>
+            </div>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="container-narbar">
             <ul>
-              <li><a href="index.html">Trang chủ</a></li>
-              <li class="has-dropdown active">
-                <a href="tours.html">Du lịch</a>
-                <ul class="dropdown">
-                  <li><a href="#">Điểm đến</a></li>
-                  <li><a href="#">Du lịch trên biển</a></li>
-                  <li><a href="#">Khách sạn</a></li>
-                  <li><a href="#">Đặt phòng</a></li>
-                </ul>
-              </li>
-              <li><a href="hotels.html">Khách sạn</a></li>
-              <li><a href="services.html">Dịch vụ</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="about.html">Về chúng tôi</a></li>
-              <li><a href="contact.html">Liên hệ với chúng tôi</a></li>
+                <li>
+                    <a href="#">Gallery</a>
+                </li>
+                <li>
+                    <a href="#">Description</a>
+                </li>
+                <li>
+                    <a href="#">Details</a>
+                </li>
+                <li>
+                    <a href="#">Location</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Social</a>
+                </li>
             </ul>
-          </div>
         </div>
-      </div>
     </div>
-  </nav>
-  <h1>My First Bootstrap 4 Page</h1>
-  <p>Resize this responsive page to see the effect!</p>
-</div>
-
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>About Me</h2>
-      <h5>Photo of me:</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      <h3>Some Links</h3>
-      <p>Lorem ipsum dolor sit ame.</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
-    </div>
-    <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      <br>
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-      <div class="footer-content">
-        <div class="footer-content1">
-          <h3 class="title">Liên hệ</h3>
-        </div>
-
-        <div class="container" id="contact-info">
-          <div class="row">
-            <div class="col-sm">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Privaty Policy</a></li>
-              <li><a href="#">Rooms</a></li>
-            </div>
-            <div class="col-sm">
-              <li><a href="#">The Room & Suites</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Restaurant</a></li>
-            </div>
-            <div class="col-sm" id="info">
-              <p>
-                <i class="fa fa-map-marker"><span>  Address:</span></i>
-                <p>Tỉnh lộ 44A, thị trấn Phước Hải, huyện Đất Đỏ, tỉnh Bà Rịa – Vũng Tàu, Việt Nam</p>
-              </p>
-              <p>
-                <i class="fa fa-phone"><span>  Phone:</span></i>
-                <p>0254 367 9939</p>
-              </p>
-              <p>
-                <i class="fa fa-paper-plane"><span>  Email:</span></i>
-                <a href="#">reserv.phuochai@lanrung.com.vn</a>
-              </p>
-            </div>
-            <div class="col-sm">
-              <p>Sign up for our newsletter</p>
-              <form action="#" class="footer-newsletter">
-                <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Email...">
-                  <button type="submit" class="btn"><span class="fa fa-paper-plane"></span></button>
+    <div class="Main">
+        <div class="container-Main">
+            <div class="left">
+                <div class="Gallery">
+                    <a class="prev" onclick="Prev()" >&#10094;</a>
+                    <a class="next" onclick="Next()" >&#10095;</a>
+                    <div class="chuyen-slide"  >
+                        <%  hotels.Img.forEach(relsult =>{ %>
+                            <img src="/assets/upload/<%= relsult.filename %>" alt="">
+                        <% }) %>
+                    </div>
                 </div>
-              </form>
+                <div class="Description">
+                    <h2>Description</h2>
+                    <div class="Description-container">
+                       <%- hotels.Description %>
+                    </div>
+                </div>
+                <div class="Details">
+                    <h2>Details</h2>
+                    <div class="Details-container">
+                        <li>
+                            <strong>Price</strong>
+                            <span><%= hotels.Details.Price %></span>
+                        </li>
+                        <li>
+                            <strong>Hotel class</strong>
+                            <span>⭐️⭐️⭐️⭐️⭐️</span>
+                        </li>
+                        <li>
+                            <strong>Rooms</strong>
+                            <span><%= hotels.Details.Rooms %></span>
+                        </li>
+                        <li>
+                            <strong>Location / Region</strong>
+                            <span><%= hotels.Details.Region %></span>
+                        </li>
+                    </div>
+                </div>
+                <div class="Location">
+                    <h2>Location</h2>
+                    <%- hotels.Location %>
+                </div>
+                <div class="Contact">
+                    <h2>Contact</h2>
+                    <div class="Contact-container">
+                        <li>
+                            <strong>E-mail</strong>
+                            <a href="<%= hotels.Contact.Email %>"><%= hotels.Contact.Email %></a>
+                        </li>
+                        <li>
+                            <strong>Website</strong>
+                            <a href="<%= hotels.Contact.Website %>"><%= hotels.Contact.Website %></a>
+                        </li>
+                        <li>
+                            <strong>Phone</strong>
+                            <a href="tel:0<%= hotels.Contact.Phone %>">0<%= hotels.Contact.Phone %></a>  
+                        </li>
+                        <li>
+                            <strong>Address</strong>
+                            <span><%= hotels.Contact.Address %>
+                            </span>
+                        </li>
+                    </div>
+                </div>
+                <div class="Comment">
+                    <h2>Comment</h2>
+                    <div class="fb-comments" data-href="http://127.0.0.1:5500/Documents/Html&amp;Css.html" data-numposts="1" data-width="100%"></div>
+                </div>
             </div>
-          </div>
+            <div class="right">
+                <div class="author">
+                    <img src="/assets/images/default-user-image.png"><br>
+                    <a><%= hotels.Author %></a>
+                </div>
+                <div class="Contact">
+                    <p>Liên hệ đặt Dịch Vụ</p>
+                    <form>
+                        <input type="text" name="name" placeholder="    Your name.."><br>
+                        <input type="email" name="Email" placeholder="    Your email.."><br>
+                        <input type="text" name="Phone" placeholder="    Your Phone.."><br>
+                        <input type="text" name="Subject" placeholder="    Your Subject.."><br>
+                        <textarea name="Message" placeholder="  Messagee..."></textarea><br>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="footer-content2">
-          <div class="copyright-footer">
-            © 2020 LAN RUNG PHUOC HAI RESORT - ALL RIGHT RESERVED   |   WEBSITE DESIGNED BY TIEN THANH
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
+    <div id="fb-root"></div>
+    <script>
+        var kichthuong = document.getElementsByClassName("Gallery")[0].clientWidth;
+        var chuyenslide = document.getElementsByClassName("chuyen-slide")[0]
+        var Img = chuyenslide.getElementsByTagName("img");
+        var  Max = kichthuong * Img.length;
+        Max -= kichthuong;
+        var Chuyen = 0;
+        function Next(){
+            if(Chuyen < Max){
+                Chuyen+=kichthuong;
+            }
+            else Chuyen = 0
+            chuyenslide.style.marginLeft = "-"+Chuyen+"px"
+            clearInterval(time)
+        }
+        function Prev(){
+            if(Chuyen == 0){
+                Chuyen = Max;
+            }
+            else Chuyen-=kichthuong;
+            chuyenslide.style.marginLeft = "-"+Chuyen+"px"
+            clearInterval(time)
+        }
+        var  time = setInterval(() => {
+            if(Chuyen < Max){
+                Chuyen+=kichthuong;
+            }
+            else Chuyen = 0
+            chuyenslide.style.marginLeft = "-"+Chuyen+"px"
+        }, 1000);
+    </script>
 </body>
 </html>
