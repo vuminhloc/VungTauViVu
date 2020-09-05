@@ -1,6 +1,7 @@
 var express = require("express");
 var HotelsModel = require("../model/hotels.model");
 var ToursModel = require("../model/tour.model");
+var AdminModel = require("../model/admin.mode");
 var bodyParser = require('body-parser')
 const render  = require("ejs");
 var multer  = require('multer');
@@ -20,7 +21,7 @@ var upload = multer({
     storage: storage,
     fileFilter: function (req, file, cb) {
         console.log(file);
-        if(file.mimetype=="image/bmp" || file.mimetype=="image/png" || file.mimetype=="image/jpg" || file.mimetype=="image/jpeg"){
+        if(file.mimetype=="image/bmp" || file.mimetype=="image/png" || file.mimetype=="image/jpg" || file.mimetype=="image/jpeg" || file.mimetype=="image/webp" ){
             cb(null, true)
         }else{
             return cb(new Error('Only image are allowed!'))
@@ -35,7 +36,14 @@ Admin_router.use(bodyParser.urlencoded({ extended: true }))
 Admin_router.use(bodyParser.json())
 
 Admin_router.get("/",function(req,res){
-    res.render("./admin/admin")
+    res.render("./admin/admin",{id:req.user._id})
+})
+
+Admin_router.get("/profile/:id",function(req,res){
+    AdminModel.findById({_id : req.params.id})
+    .then((result)=>{
+        res.render("./admin/indexprofile",{Author:result})
+    })
 })
 
 Admin_router.get("/hotel",function(req,res){

@@ -6,6 +6,7 @@ var Passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 var Admin = require("./model/admin.mode");
 var port = 3000;
+var flash =  require('connect-flash');
 var TourRoutes = require("./routes/tours.route")
 var loginRoutes = require("./routes/login.route")
 var AdminRoutes = require("./routes/admin.route")
@@ -19,6 +20,16 @@ app.use(session({
         maxAge:1000*60*60*12
     }
 }))
+app.use(flash())
+app.use((req,res,next)=>{
+    res.locals.success_msg = req.flash("success_msg");
+    res.locals.error_msg = req.flash("error_msg");
+    res.locals.error = req.flash('error');
+    console.log('success_msg'+res.locals.success_msg);
+    console.log('error_msg'+res.locals.error_msg);
+    console.log('error'+res.locals.error);
+    next();
+})
 app.use(Passport.initialize());
 app.use(Passport.session(
     { secret: 'Admon' }

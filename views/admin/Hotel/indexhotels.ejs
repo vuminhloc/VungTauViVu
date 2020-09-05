@@ -30,7 +30,7 @@
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <a class="dropdown-item" href="/admin/profile">Profile Admins</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/admin/logout">Logout</a>
                     </div>
@@ -101,7 +101,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Date</th>
-                                                <th>Room Rates</th>
+                                                <th>Author</th>
                                                 <th>View-Hotel</th>
                                                 <th>Update</th>
                                                 <th>Remove</th>
@@ -111,13 +111,13 @@
                                             <%  hotels.forEach(function(item){ %>
                                             <tr>
                                                 <td><%= item.Name %></td>
-                                                <td>Date</td>
-                                                <td><%= item.Details.Price %></td>
-                                                <td><a href="/hotels/<%= item._id %>">View</a></td>
-                                                <td><a href="/admin/hotel/update/<%= item._id %>">Update</a></td>
+                                                <td><%= item.date %></td>
+                                                <td><%= item.Author %></td>
+                                                <td><a href="/hotels/<%= item._id %>"><button type="button" class="btn btn-primary">View</button></a></td>
+                                                <td><a href="/admin/hotel/update/<%= item._id %>"><button type="button" class="btn btn-info">Update</button></a></td>
                                                 <td>
                                                     <form action="/admin/hotel", method="POST">
-                                                      <button type="submit" class="btn btn-primary" name="id" value="<%= item._id %>" >Delete</button>
+                                                      <button type="submit" class="btn btn-danger" name="id" value="<%= item._id %>" >Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

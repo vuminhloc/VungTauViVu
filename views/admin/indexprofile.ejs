@@ -78,98 +78,52 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Hotels</h1>
+                        <h1 class="mt-4">Profile</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="/admin/hotel">Hotels</a></li>
-                            <li class="breadcrumb-item active">Create</li>
+                            <li class="breadcrumb-item active">Profile</li>
                         </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                This is profile of Admin 
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table mr-1"></i>
+                                    Data table of <%= Author.Name %> on website
+                                <a href="/admin/hotel/createhotel"><button type="button" class="btn btn-primary float-right" >Create</button></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>View-Hotel</th>
+                                                <th>Update</th>
+                                                <th>Remove</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>item.Name</td>
+                                                <td> item.date</td>
+                                                <td><a href="#">View</a></td>
+                                                <td><a href="#">Update</a></td>
+                                                <td>
+                                                    <form action="/admin/hotel", method="POST">
+                                                      <button type="submit" class="btn btn-primary" name="id" value="" >Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <form  action="/admin/hotel/update/<%= hotels._id %>" method="POST" class="card-body"  enctype="multipart/form-data">
-                        <label for="formGroupExampleInput">MetaTitle</label>
-                        <input type="text" class="form-control" value="<%= hotels.MetaTitle %>" name="MetaTitle">
-                        <label for="formGroupExampleInput">Meta Keywords</label>
-                        <input type="text" class="form-control" value="<%= hotels.Keywords %>" name="Metadescription">
-                        <label for="formGroupExampleInput">Meta Keywords</label>
-                        <input type="text" class="form-control" value="<%= hotels.MetaTitle %>" name="Metakeywords">
-                        
-                        <label for="formGroupExampleInput">Banner</label><br>
-                        <input type="file"  name="Banner"><br>
-
-                        <label for="formGroupExampleInput">Name</label>
-                        <input type="text" class="form-control" value="<%= hotels.Name %>" name="Name"><br>
-
-                        <label for="formGroupExampleInput">Img</label><br>
-                        <input type="file" multiple="multiple"  name="Img"><br>
-              
-                        <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea class="form-control" value="<%= hotels.Description %>" name="Description" ></textarea>
-              
-              
-                            <label for="number" >Details Price:</label>
-                            <input type="phone" class="form-control" value="<%= hotels.Details.Price %>" name="Price"   >
-              
-                            <label for="phone">Details Hotel class:</label>
-                            <input type="phone" class="form-control" value="<%= hotels.Details.class %>" name="class"  >
-              
-                            <label for="phone">Details Rooms:</label>
-                            <input type="phone" class="form-control" value="<%= hotels.Details.Rooms %>" name="Rooms"   >
-              
-                            <label for="address">Details Region:</label>
-                            <input type="address" class="form-control" value="<%= hotels.Details.Region %>" name="Region"   >
-              
-                        
-                        <label for="formGroupExampleInput">Location</label>
-                        <input type="text" class="form-control" value="<%= hotels.Details.Location %>" name="Location"><br>
-
-                        <label for="formGroupExampleInput">Contact</label>
-              
-                            <label for="address">Contact Email:</label>
-                            <input type="address"name="Email" value="<%= hotels.Contact.Email %>" class="form-control"   >
-              
-                            <label for="phone">Contact Website:</label>
-                            <input type="phone"name="Website" value="<%= hotels.Contact.Website  %>" class="form-control"   >
-              
-                            <label for="address">Contact Phone:</label>
-                            <input type="address"name="Phone" value="<%= hotels.Contact.Phone %>" class="form-control"   >
-              
-                            <label for="address">Contact Address:</label>
-                            <input type="address"name="Address" value="<%= hotels.Contact.Address %>" class="form-control"   >
-                        <label for="formGroupExampleInput">Type</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Nghỉ Dưỡng" id="defaultCheck1" name="Type" >
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Nghỉ Dưỡng
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Vui Chơi - Giải Trí" id="defaultCheck1" name="Type" >
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Vui Chơi - Giải Trí
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Dịch vụ Massage & Spa" id="defaultCheck1" name="Type" >
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Dịch vụ Massage & Spa
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Karaoke" id="defaultCheck1" name="Type" >
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Karaoke
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Quán Bars" id="defaultCheck1" name="Type" >
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Quán Bars
-                                </label>
-                            </div>
-                            <br>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
