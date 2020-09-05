@@ -21,15 +21,6 @@ app.use(session({
     }
 }))
 app.use(flash())
-app.use((req,res,next)=>{
-    res.locals.success_msg = req.flash("success_msg");
-    res.locals.error_msg = req.flash("error_msg");
-    res.locals.error = req.flash('error');
-    console.log('success_msg'+res.locals.success_msg);
-    console.log('error_msg'+res.locals.error_msg);
-    console.log('error'+res.locals.error);
-    next();
-})
 app.use(Passport.initialize());
 app.use(Passport.session(
     { secret: 'Admon' }
@@ -76,14 +67,17 @@ app.use(function(req,res,next){
 Passport.use(new LocalStrategy(
     (username, password, done)=>{
         Admin.findOne({ Account: username }, function(err, user) {
+            if(err){
+                console.log(err)
+            }
             if (user == null || user == undefined) {
-                return done(null, false);
+                return done(null, false,{ message: 'Validation Error' });
             }
             if (user.Account !== username) {
-              return done(null, false);
+                return done(null, false,{ message: 'Incorrect username or password' });
             }
             if (user.Password !== password) {
-              return done(null, false);
+                return done(null, false, { message: 'Incorrect username or password' });
             }
             return done(null, user);
         });

@@ -10,8 +10,7 @@ Login_router.use(flash());
 
 Login_router.get("/",function(req,res){
     var mess = req.flash()
-    console.log(mess)
-    res.render("./admin/login")
+    res.render("./admin/login",{err:mess})
 });
 
 Login_router.post("/",Passport.authenticate("local",{failureFlash:true,
