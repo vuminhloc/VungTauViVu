@@ -80,7 +80,10 @@ Admin_router.post("/hotel/createhotel",function(req,res){
                 Img:req.files['Img'],
                 Description: req.body.Description,
                 Details:{
-                    Price:req.body.Price,
+                    Price:{
+                        MinPrice:parseInt(req.body.MinPrice),
+                        MaxPrice:parseInt(req.body.MaxPrice)
+                    },
                     Hotel:parseInt(req.body.class),
                     Rooms:parseInt(req.body.Rooms),
                     Region:req.body.Region  
@@ -148,7 +151,10 @@ Admin_router.post("/hotel/update/:id",function(req,res){
                 data.Img=req.files['Img'],
                 data.Description= req.body.Description,
                 data.Details={
-                    Price:req.body.Price,
+                    Price:{
+                        MinPrice:parseInt(req.body.MinPrice),
+                        MaxPrice:parseInt(req.body.MaxPrice)
+                    },
                     Hotel:parseInt(req.body.class),
                     Rooms:parseInt(req.body.Rooms),
                     Region:req.body.Region  

@@ -9,8 +9,8 @@ route.get('/',(req,res)=>{
     var q = req.query.q;
     var page = parseInt(req.query.page) || 1;
     var perpage = 6;
-    var Start = (page - 1)* perpage;
-    var end = page * perpage;
+    var Start = (page - 1)* perpage;//0
+    var end = page * perpage;//6
     HotelModel.find()
     .then(function(doc){
         var sumpage = Math.ceil((doc.length/6));
@@ -47,7 +47,7 @@ route.get("/search",function(req,res){
     var end = page * perpage;
     // var xoa_dau1 = xoa_dau(req.query.q)
     var regex = new RegExp(req.query.q,"gi")
-    HotelModel.find({ "Name" : { $regex: regex}}).sort({'Details.Price':parseInt(gia)})
+    HotelModel.find({ "Name" : { $regex: regex}}).sort({'Details.Price.MaxPrice':parseInt(gia)})
     .then((result)=>{  
          
         var sumpage = Math.ceil((result.length/6));

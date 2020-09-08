@@ -10,7 +10,59 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/css/view-hotel.css">
     <script src="https://kit.fontawesome.com/a885e11261.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tour Travel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .checked {
+      color: orange;
+    }
+    </style>
+      <!-- Facebook and Twitter integration -->
+        <meta property="og:title" content=""/>
+        <meta property="og:image" content=""/>
+        <meta property="og:url" content=""/>
+        <meta property="og:site_name" content=""/>
+        <meta property="og:description" content=""/>
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:url" content="" />
+        <meta name="twitter:card" content="" />
     
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="/assets/css/animate.css">
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="/assets/css/icomoon.css">
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    
+        <!-- Flexslider  -->
+        <link rel="stylesheet" href="/assets/css/flexslider.css">
+    
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+    
+        <!-- Date Picker -->
+        <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+        <!-- Flaticons  -->
+        <link rel="stylesheet" href="/assets/fonts/flaticon/font/flaticon.css">
+    
+        <!-- Theme style  -->
+        <link rel="stylesheet" href="/assets/css/style.css">
+    
+        <!-- Modernizr JS -->
+        <script src="/assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
     <div id="banner" style="background-image:linear-gradient(0,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0)) ,url('/assets/upload/<%= hotels.Banner[0].filename %>') ;">
@@ -20,7 +72,9 @@
             </div>
             <div class="h1banner">
                 <h1><%= hotels.Name %><i class="far fa-check-circle"></i></h1>
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <% for(i=1;i <= hotels.Details.Hotel;i++ ){  %>
+                    <% i %><i class="fas fa-star"></i>
+                <% } %>
             </div>
             <div class="moneybanner">
                 <i class="far fa-money-bill-alt"><%= hotels.Details.Price %></i>
@@ -37,26 +91,23 @@
             </div>
         </div>
     </div>
-    <div class="navbar">
-        <div class="container-narbar">
+    <div class="navbar1">
+        <div class="container-narbar1">
             <ul>
                 <li>
-                    <a href="#">Gallery</a>
+                    <a href="#Gallery">Gallery</a>
                 </li>
                 <li>
-                    <a href="#">Description</a>
+                    <a href="#Description">Description</a>
                 </li>
                 <li>
-                    <a href="#">Details</a>
+                    <a href="#Details">Details</a>
                 </li>
                 <li>
-                    <a href="#">Location</a>
+                    <a href="#Location">Location</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
-                </li>
-                <li>
-                    <a href="#">Social</a>
+                    <a href="#Contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -64,7 +115,7 @@
     <div class="Main">
         <div class="container-Main">
             <div class="left">
-                <div class="Gallery">
+                <div id="Gallery" class="Gallery">
                     <a class="prev" onclick="Prev()" >&#10094;</a>
                     <a class="next" onclick="Next()" >&#10095;</a>
                     <div class="chuyen-slide"  >
@@ -73,13 +124,13 @@
                         <% }) %>
                     </div>
                 </div>
-                <div class="Description">
+                <div  id="Description" class="Description">
                     <h2>Description</h2>
                     <div class="Description-container">
                        <%- hotels.Description %>
                     </div>
                 </div>
-                <div class="Details">
+                <div id="Details" class="Details">
                     <h2>Details</h2>
                     <div class="Details-container">
                         <li>
@@ -88,7 +139,9 @@
                         </li>
                         <li>
                             <strong>Hotel class</strong>
-                            <span>⭐️⭐️⭐️⭐️⭐️</span>
+                            <% for(i=1;i <= hotels.Details.Hotel;i++ ){  %>
+                                <% i %><span>⭐️</span>
+                            <% } %>
                         </li>
                         <li>
                             <strong>Rooms</strong>
@@ -100,11 +153,11 @@
                         </li>
                     </div>
                 </div>
-                <div class="Location">
+                <div id="Location" class="Location">
                     <h2>Location</h2>
                     <%- hotels.Location %>
                 </div>
-                <div class="Contact">
+                <div id="Contact" class="Contact">
                     <h2>Contact</h2>
                     <div class="Contact-container">
                         <li>
@@ -128,7 +181,7 @@
                 </div>
                 <div class="Comment">
                     <h2>Comment</h2>
-                    <div class="fb-comments" data-href="http://127.0.0.1:5500/Documents/Html&amp;Css.html" data-numposts="1" data-width="100%"></div>
+                    <div class="fb-comments" data-href="http://192.168.1.89:8080/hotels/<%= hotels._id %>" data-numposts="5" data-width="100%"></div>
                 </div>
             </div>
             <div class="right">
@@ -151,6 +204,7 @@
         </div>
     </div>
     <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=699983910784583&autoLogAppEvents=1" nonce="MDi08O5i"></script>
     <script>
         var kichthuong = document.getElementsByClassName("Gallery")[0].clientWidth;
         var chuyenslide = document.getElementsByClassName("chuyen-slide")[0]
@@ -182,5 +236,125 @@
             chuyenslide.style.marginLeft = "-"+Chuyen+"px"
         }, 1000);
     </script>
+    <footer id="colorlib-footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-4 colorlib-widget">
+                    <h4>VIVU Vũng Tàu</h4>
+                    <p>Copyright ©2020 All rights reserved | This template is made with by Tien Thanh</p>
+                    <p>
+                        <ul class="colorlib-social-icons">
+                            <li><a href="#"><i class="icon-twitter"></i></a></li>
+                            <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-4 colorlib-widget">
+                    <h4>Blog</h4>
+                    <p>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></li>
+                            <li><a href="#">Tour du lịch chỉ dành cho bạn</a></li>
+                        </ul>
+                    </p>
+                </div>
+                <!--<div class="col-md-2 colorlib-widget">
+                    <h4>Book Now</h4>
+                    <p>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="#">Chuyến bay</a></li>
+                            <li><a href="#">Khách sạn</a></li>
+                            <li><a href="#">Tour</a></li>
+                            <li><a href="#">Đặt xe</a></li>
+                            <li><a href="#">Beach & Resorts</a></li>
+                            <li><a href="#">Du thuyền</a></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-2 colorlib-widget">
+                    <h4>Top Deals</h4>
+                    <p>
+                        <ul class="colorlib-footer-links">
+                            <li><a href="#">Pullman Vung Tau</a></li>
+                            <li><a href="#">The Emperial Hotel</a></li>
+                            <li><a href="#">Ho Tram Beach Resort</a></li>
+                            <li><a href="#">Malibu Hotel</a></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h4>Blog</h4>
+                    <ul class="colorlib-footer-links">
+                        <li><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></li>
+                        <li><a href="#">Làm thế nào 5 người này tìm thấy con đường đến chuyến đi mơ ước của họ</a></li>
+                        <li><a href="#">Tour du lịch chỉ dành cho bạn</a></li>
+                    </ul>
+                </div>-->
+
+                <div class="col-md-4 colorlib-widget">
+                    <h4>Thông tin liên hệ</h4>
+                    <ul class="colorlib-footer-links">
+                        <li>123 Huyền Trân Công Chúa, <br> Phường 8, Bà Rịa - Vũng Tàu</li>
+                        <li><a href="tel://1234567920">+ 1235 2355 98</a></li>
+                        <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
+                        <li><a href="#">yoursite.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+
+                        Copyright &copy;<script>document.write(new Date().getFullYear())</script>
+                        All rights reserved | Thằng Tâm tự làm.
+                    </p>
+                </div>
+            </div>-->
+        </div>
+    </footer>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5f23c8701a544e2a7275b240/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+
+
+<!-- jQuery -->
+<script src="/assets/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="/assets/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="/assets/js/jquery.waypoints.min.js"></script>
+<!-- Flexslider -->
+<script src="/assets/js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="/assets/js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/magnific-popup-options.js"></script>
+<!-- Date Picker -->
+<script src="/assets/js/bootstrap-datepicker.js"></script>
+<!-- Stellar Parallax -->
+<script src="/assets/js/jquery.stellar.min.js"></script>
+<!-- Main -->
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
+
+
 </body>
 </html>

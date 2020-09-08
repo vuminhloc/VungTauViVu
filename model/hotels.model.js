@@ -10,7 +10,10 @@ const HotelsSchema = new mongoose.Schema({
     Img:Array,
     Description: String,
     Details:{
-        Price:String,
+        Price:{
+            MinPrice:Number,
+            MaxPrice:Number
+        },
         Hotel:Number,
         Rooms:Number,
         Region:String   

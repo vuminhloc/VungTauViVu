@@ -123,13 +123,17 @@
 								<div class="col-md-6 col-sm-6 animate-box">
 									<div class="hotel-entry">
 										<a href="/hotels/<%= relsult._id %>" class="hotel-img" style="background-image: url('/assets/upload/<%= relsult.Banner[0].filename %>') ;">
-											<p class="price"><span><%= relsult.Details.Price %>$</span><small> /night</small></p>
+											<p class="price"><span><%= relsult.Details.Price.MinPrice %>.000-<%= relsult.Details.Price.MaxPrice %>.000 VNĐ</span><small> /night</small></p>
 										</a>
 										<div class="desc">
-											<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 32 Reviews</p>
+											<p class="star"><span>
+												<% for(i=1;i <= relsult.Details.Hotel;i++ ){  %>
+													<% i %><i class="icon-star-full"></i>
+												<% } %>
+												</span></p>
 											<h3><a href="/hotels/<%= relsult._id %>"><%= relsult.Name %></a></h3>
 											<span class="place"><%= relsult.Details.Location %></span>
-											<p>Tiền sảnh ngập tràn ánh sáng ...</p>
+											<p>Tác Giả :<%= relsult.Author %></p>
 										</div>
 									</div>
 								</div>
