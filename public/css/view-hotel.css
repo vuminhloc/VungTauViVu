@@ -21,7 +21,7 @@ body{
     width: 980px;
     height: 3200px;
     position: relative;
-    top: 200px;
+    top: 300px;
 }
 #banner #container .iconbanner i{
     color: rgb(93, 125, 230);
@@ -301,6 +301,7 @@ body{
     font-size: 18px;
     font-style: unset;
     color:rgb(117, 117, 114);
+    padding-top: 20px;
 }
 .Main .container-Main .right {
     float: right;

@@ -114,48 +114,21 @@
 				<div class="row">
 					<div class="col-md-8">
 						<div class="wrap-division">
-							<article class="animate-box">
-								<div class="blog-img" style="background-image: url(/assets/images/blog-1.jpg);"></div>
-								<div class="desc">
-									<div class="meta">
-										<p>
-											<span>May 22, 2020 </span>
-											<span>admin </span>
-											<span><a href="#">2 Bình luận</a></span>
-										</p>
+							<%  blog.forEach(relsult =>{ %>
+								<article class="animate-box">
+									<div class="blog-img" style="background-image:url('/assets/UploadBlog/<%= relsult.Banner %>');"></div>
+									<div class="desc">
+										<div class="meta">
+											<p>
+												<span><%= relsult.date %></span>
+												<span class="cat"><%= relsult.Type %></span>
+											</p>
+										</div>
+										<h2><a href="/blog/<%= relsult._id %>"><%= relsult.Name %></a></h2>
+										<p>Tác Giả: <%= relsult.Author %></p>
 									</div>
-									<h2><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></h2>
-									<p>Phần mô tả Tâm làm.</p>
-								</div>
-							</article>
-							<article class="animate-box">
-								<div class="blog-img" style="background-image: url(/assets/images/blog-2.jpg);"></div>
-								<div class="desc">
-									<div class="meta">
-										<p>
-											<span>May 22, 2020 </span>
-											<span>admin </span>
-											<span><a href="#">1 Bình luận</a></span>
-										</p>
-									</div>
-									<h2><a href="#">Làm thế nào 5 người này tìm thấy con đường đến chuyến đi mơ ước của họ</a></h2>
-									<p>Phần mô tả Tâm làm.</p>
-								</div>
-							</article>
-							<article class="animate-box">
-								<div class="blog-img" style="background-image: url(/assets/images/blog-3.jpg);"></div>
-								<div class="desc">
-									<div class="meta">
-										<p>
-											<span>May 22, 2020 </span>
-											<span>admin </span>
-											<span><a href="#">0 Bình luận</a></span>
-										</p>
-									</div>
-									<h2><a href="#">Tour du lịch chỉ dành cho bạn</a></h2>
-									<p>Phần mô tả Tâm làm.</p>
-								</div>
-							</article>
+								</article>
+								<% }) %>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
@@ -175,48 +148,58 @@
 						<div class="sidebar-wrap">
 							<div class="side animate-box">
 								<h3 class="sidebar-heading">Bài viết gần đây</h3>
+								<%  sort.forEach(relsult =>{ %>
 								<div class="blog-entry-side">
-									<a href="blog.html" class="blog-post">
-										<span class="img" style="background-image: url(/assets/images/blog-3.jpg);"></span>
+									<a href="/blog/<%= relsult[0]._id %>" class="blog-post">
+										<span class="img" style="background-image: url('/assets/UploadBlog/<%= relsult[0].Banner %>');"></span>
 										<div class="desc">
-											<span class="date">May 22, 2020</span>
-											<h3>Hướng dẫn chọn một bữa ăn tốt nhất</h3>
-											<span class="cat">Tour</span>
+											<span class="date"><%= relsult[1] %></span>
+											<h3><%= relsult[0].Name %></h3>
+											<span class="cat"><%= relsult[0].Type %></span>
 										</div>
 									</a>
 								</div>
-								<div class="blog-entry-side">
-									<a href="blog.html" class="blog-post">
-										<span class="img" style="background-image: url(/assets/images/blog-2.jpg);"></span>
-										<div class="desc">
-											<span class="date">May 22, 2020</span>
-											<h3>àm thế nào 5 người này tìm thấy con đường đến chuyến đi mơ ước của họ</h3>
-											<span class="cat">Khách sạn</span>
-										</div>
-									</a>
-								</div>
-								<div class="blog-entry-side">
-									<a href="blog.html" class="blog-post">
-										<span class="img" style="background-image: url(/assets/images/blog-3.jpg);"></span>
-										<div class="desc">
-											<span class="date">May 22, 2020</span>
-											<h3>Tour du lịch chỉ dành cho bạn</h3>
-											<span class="cat">Du thuyền</span>
-										</div>
-									</a>
-								</div>
+								<% }) %>
+								
 							</div>
 							<div class="side animate-box">
 								<div class="sidebar-heading">Thể loại</div>
 								<ul class="category">
-									<li><a href="#"><i class="icon-check"></i> Thuê ô tô<span>(2)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> Máy bay<span>(2)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> Hoạt động<span>(3)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> Khách sạn<span>(5)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> Tour<span>(2)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> Du lịch<span>(3)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> 1 Đêm<span>(2)</span></a></li>
-									<li><a href="#"><i class="icon-check"></i> Du thuyền<span>(2)</span></a></li>
+									<% if( dulich.length > 0){ %>
+										<li><a href="blog/search?q=Du Lịch"><i class="icon-check"></i> Du lịch <span>(<%= dulich.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+
+									<% if( AnUong.length > 0){ %>
+										<li><a href="blog/search?q=Ăn Uống"><i class="icon-check"></i> Ăn - Uống <span>(<%= AnUong.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+
+									<% if( vuichoi.length > 0){ %>
+										<li><a href="blog/search?q=Vui Chơi"><i class="icon-check"></i> Vui Chơi <span>(<%= vuichoi.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+
+									<% if( xeco.length > 0){ %>
+										<li><a href="blog/search?q=Xe - Cộ"><i class="icon-check"></i> Xe - Cộ <span>(<%= xeco.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+
+									<% if( khachsan.length > 0){ %>
+										<li><a href="blog/search?q=Khách Sạn"><i class="icon-check"></i> Khách Sạn <span>(<%= khachsan.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+									
+									<% if( nhahang.length > 0){ %>
+										<li><a href="blog/search?q=Nhà Hàng"><i class="icon-check"></i> Nhà Hàng <span>(<%= nhahang.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+									
+									<% if( diadiem.length > 0){ %>
+										<li><a href="blog/search?q=Địa Điểm"><i class="icon-check"></i> Địa Điểm <span>(<%= diadiem.length %>)</span></a></li>
+									<% }else{ %>
+									<% } %>
+									
 								</ul>
 							</div>
 						</div>
@@ -226,82 +209,7 @@
 		</div>
 
 		<!---------------------------------------------------- Footer ----------------------------------------------------------------------->
-		<footer id="colorlib-footer" role="contentinfo">
-			<div class="container">
-				<div class="row row-pb-md">
-					<div class="col-md-4 colorlib-widget">
-						<h4>VIVU Vũng Tàu</h4>
-						<p>Copyright ©2020 All rights reserved | This template is made with by Tien Thanh</p>
-						<p>
-							<ul class="colorlib-social-icons">
-								<li><a href="#"><i class="icon-twitter"></i></a></li>
-								<li><a href="#"><i class="icon-facebook"></i></a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-4 colorlib-widget">
-						<h4>Blog</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></li>
-								<li><a href="#">Tour du lịch chỉ dành cho bạn</a></li>
-							</ul>
-						</p>
-					</div>
-					<!--<div class="col-md-2 colorlib-widget">
-						<h4>Book Now</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Chuyến bay</a></li>
-								<li><a href="#">Khách sạn</a></li>
-								<li><a href="#">Tour</a></li>
-								<li><a href="#">Đặt xe</a></li>
-								<li><a href="#">Beach & Resorts</a></li>
-								<li><a href="#">Du thuyền</a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2 colorlib-widget">
-						<h4>Top Deals</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Pullman Vung Tau</a></li>
-								<li><a href="#">The Emperial Hotel</a></li>
-								<li><a href="#">Ho Tram Beach Resort</a></li>
-								<li><a href="#">Malibu Hotel</a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2">
-						<h4>Blog</h4>
-						<ul class="colorlib-footer-links">
-							<li><a href="#">Hướng dẫn chọn một bữa ăn tốt nhất</a></li>
-							<li><a href="#">Làm thế nào 5 người này tìm thấy con đường đến chuyến đi mơ ước của họ</a></li>
-							<li><a href="#">Tour du lịch chỉ dành cho bạn</a></li>
-						</ul>
-					</div>-->
-
-					<div class="col-md-4 colorlib-widget">
-						<h4>Thông tin liên hệ</h4>
-						<ul class="colorlib-footer-links">
-							<li>123 Huyền Trân Công Chúa, <br> Phường 8, Bà Rịa - Vũng Tàu</li>
-							<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-							<li><a href="#">yoursite.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<!--<div class="row">
-					<div class="col-md-12 text-center">
-						<p>
-
-							Copyright &copy;<script>document.write(new Date().getFullYear())</script>
-							All rights reserved | Thằng Tâm tự làm.
-						</p>
-					</div>
-				</div>-->
-			</div>
-		</footer>
+		<%- include ('partials/footer') %>
 	</div>
 
 	<div class="gototop js-top">

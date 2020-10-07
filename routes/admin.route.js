@@ -1,13 +1,34 @@
 var express = require("express");
 var HotelsModel = require("../model/hotels.model");
 var ToursModel = require("../model/tour.model");
-var AdminModel = require("../model/admin.mode");
+var AdminModel = require("../model/admin.model");
+var BlogModel = require("../model/blog.model");
 var bodyParser = require('body-parser')
 const render  = require("ejs");
 var multer  = require('multer');
 const { use } = require("passport");
 
 var Admin_router = express.Router();
+
+var Bannerblog = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/UploadBlog')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+});
+var Blogupload = multer({ 
+    storage: Bannerblog,
+    fileFilter: function (req, file, cb) {
+        console.log(file);
+        if(file.mimetype=="image/bmp" || file.mimetype=="image/png" || file.mimetype=="image/jpg" || file.mimetype=="image/jpeg" || file.mimetype=="image/webp" ){
+            cb(null, true)
+        }else{
+            return cb(new Error('Only image are allowed!'))
+        }
+    }
+}).single('Bannerblog')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -195,105 +216,110 @@ Admin_router.post("/hotel/",function(req,res){
             res.json("Xin lỗi bạn không có quyền xóa bài viết của người khác,vui lòng back lại trang")
         }
     })
-})
-;Admin_router.post("/tour",function(req,res){
-    var id = req.body.id;
-    ToursModel.findByIdAndRemove(id).exec();
-    res.redirect('/admin/tour');
 });
 
-Admin_router.get("/tour",function(req,res){
-    ToursModel.find()
+Admin_router.get("/blog",function(req,res){
+    BlogModel.find()
     .then(function(doc){
-        res.render("./admin/tours/indextour",{
-            tours:doc,
-            stt:doc.length,
+        res.render('./admin/Blog/indexblogs',{
+            blog:doc
         })
     })
-})
-Admin_router.get("/tour/create",function(req,res){
-    res.render("./admin/tours/createtour")
-})
-
-Admin_router.get("/tour/update/:id",function(req,res){
-    ToursModel.findById({_id : req.params.id})
-    .then((result)=>{
-        res.render("./admin/tours/updatetour",{tour:result})
-    })
-})
-
-Admin_router.post("/tour/create",function(req,res){
-    var day = new Date().getDate();
-    var month = new Date().getMonth()+1
-    var year = new Date().getFullYear()
-    var h = new Date().getHours();
-    var m = new Date().getSeconds();
-    var mm = new Date().getMinutes();
-    var dd_mm_yyyy = `${day}/${month}/${year}      ${h}:${mm}:${m}`
-    var post = {
-        Name: req.body.name,
-        Description: req.body.Description,
-        Details:{
-            Price:parseInt(req.body.Price),
-            Hotel:parseInt(req.body.Hotel),
-            Rooms:parseInt(req.body.Rooms),
-            Region:req.body.Region    
-        },
-        date: dd_mm_yyyy,
-        Location: String,
-        Contact:{
-            Email:req.body.Email,
-            Website:req.body.Website,
-            Phone:parseInt(req.body.Phone),
-            Address:req.body.Address
-        }
-    }   
-    
-    var data = new ToursModel(post);
-    data.save()
-
-    res.redirect("/admin/tour")
-})
-
-Admin_router.post("/tour/update/:id",function(req,res){
-    var day = new Date().getDate();
-    var month = new Date().getMonth()+1
-    var year = new Date().getFullYear()
-    var h = new Date().getHours()+1;
-    var m = new Date().getSeconds();
-    var mm = new Date().getMinutes();
-    var dd_mm_yyyy = `${day}/${month}/${year}      ${h}:${mm}:${m}`
-    var id_post = req.params.id;
-    ToursModel.findById(id_post,function(err,data){
-        if(err){
-            console.error("Not id-tour in database")
-        }
-        data.Name = req.body.name
-        data.Description= req.body.Description
-        data.Details={
-            Price:parseInt(req.body.Price),
-            Hotel:parseInt(req.body.Hotel),
-            Rooms:parseInt(req.body.Rooms),
-            Region:req.body.Region    
-        }
-        data.date= dd_mm_yyyy
-        data.Location= String
-        data.Contact={
-            Email:req.body.Email,
-            Website:req.body.Website,
-            Phone:parseInt(req.body.Phone),
-            Address:req.body.Address
-        }
-        data.save();
-    })
-    res.redirect("/admin/tour")
-})
-
-Admin_router.post("/tour",function(req,res){
-    var id = req.body.id;
-    ToursModel.findByIdAndRemove(id).exec();
-    res.redirect('/admin/tour');
 });
+
+Admin_router.post("/blog/",function(req,res){
+    var id = req.body.id;
+    var user = req.user._id
+    BlogModel.findById(id,function(err,data){
+        if(user == data.Authorid){
+            BlogModel.findByIdAndRemove(id).exec();
+            res.redirect('/admin/blog');
+        }
+        else{
+            res.json("Xin lỗi bạn không có quyền xóa bài viết của người khác,vui lòng back lại trang")
+        }
+    })
+});
+
+Admin_router.get("/blog/createblog",function(req,res){
+    res.render('./admin/Blog/createblog')
+});
+
+Admin_router.post('/blog/createblog',function(req,res){
+    Blogupload(req, res, function (err) {
+        if (err instanceof multer.MulterError) {
+          console.log("A Multer error occurred when uploading."); 
+        } else if (err) {
+          console.log("An unknown error occurred when uploading." + err);
+        }else{
+            console.log(req.file.fieldname)
+            var day = new Date().getDate();
+            var month = new Date().getMonth()+1
+            var year = new Date().getFullYear()
+            if( month == 1 ){
+                 month = 'January'
+            }
+            if( month == 2 ){
+                 month = 'February'
+            }
+            if( month == 3 ){
+                 month = 'March'
+            }
+            if( month == 4 ){
+                return month = 'April'
+            }
+            if( month == 5 ){
+                 month = 'May'
+            }
+            if( month == 6 ){
+                 month = 'June'
+            }
+            if( month == 7 ){
+                 month = 'July'
+            }
+            if( month == 8 ){
+                 month = 'August'
+            }
+            if( month == 9 ){
+                 month = 'September'
+            }
+            if( month == 10 ){
+                 month = 'October'
+            }
+            if( month == 11 ){
+                 month = 'November'
+            }
+            if( month == 12 ){
+                 month = 'December'
+            }
+            var dd_mm_yyyy = `${month} ${day}, ${year} `
+            var post = {
+                MetaTitle:req.body.MetaTitle,
+                MetaDescription: req.body.Metadescription,
+                MetaKeywords: req.body.Metakeywords,
+                Banner:req.file.originalname,
+                Name: req.body.Name,
+                Description: req.body.Description,
+                Content:req.body.Content,
+                date: dd_mm_yyyy,
+                Time:new Date(),
+                Type:req.body.Type,
+                Author:req.user.Name,
+                Authorid:req.user._id
+            }   
+            var data = new BlogModel(post);
+            data.save(function(err){
+                if(err){
+                    res.json({"errMsg":err})
+                }
+                else{
+                    res.redirect('/admin/blog')
+                }
+            })
+        }
+    })
+});
+
 
 Admin_router.get('/logout',(req,res)=>{
     req.logout();

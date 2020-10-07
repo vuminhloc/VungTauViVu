@@ -437,7 +437,11 @@
 				                <div class="col-md-12">
 									<label for="date">Search Hotels</label>
 									<div class="form-field">
-										<input type="text" name="q" class="form-control" placeholder="Search Hotels">
+										<% if(q == undefined){ %>
+											<input type="text" name="q" class="form-control"   placeholder="Search Hotels"> 
+										<% }else{ %>
+											<input type="text" name="q" class="form-control"  value="<%= q %>" placeholder="Search Hotels"> 
+										<% } %>
 									</div>
 								</div>
 								<br>
@@ -448,8 +452,9 @@
 									<label for="date">Giá /Night </label>
 									<div class="form-field">
 										<select name="Gia" id="people" class="form-control">
-										  <option style="color: black;" value="1">Thấp-Cao</option>
-										  <option style="color: black;" value="-1">Cao-Thấp</option>
+											<option style="color: black;" value="0">Giá Tiền</option>
+										  	<option style="color: black;" value="1">Thấp-Cao</option>
+										  	<option style="color: black;" value="-1">Cao-Thấp</option>
 										</select>
 									  </div>
 								</div>

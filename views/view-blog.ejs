@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title><%= blogs.MetaTitle %></title>
+	<!-- Bootstrap  -->
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="/assets/css/view-blog.css" rel="stylesheet">
+  <link href="/assets/css/view-blog.min.css" rel="stylesheet">
+  <style>
+    img{
+      max-width: 100%;
+      max-height: 460px;
+      margin-bottom: 20px;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="colorlib-nav" role="navigation">
+    <div class="top-menu">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-2">
+            <div id="colorlib-logo"><a href="/">Tour</a></div>
+          </div>
+          <div class="col-xs-10 text-right menu-1">
+            <ul>
+              <li><a href="/">Trang chủ</a></li>
+              <li class="has-dropdown">
+                <a href="/tours">Du lịch</a>
+                <ul class="dropdown">
+                  <li><a href="#">Điểm đến</a></li>
+                  <li><a href="#">Du lịch trên biển</a></li>
+                  <li><a href="#">Khách sạn</a></li>
+                  <li><a href="#">Đặt phòng</a></li>
+                </ul>
+              </li>
+              <li><a href="/hotels">Khách sạn</a></li>
+              <li class="active"><a href="/blog">Blog</a></li>
+              <li><a href="/about">Về chúng tôi</a></li>
+              <li><a href="/contact">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="height: 560.45px; background-repeat: no-repeat; background-size: cover; background-image: url('/assets/UploadBlog/<%= blogs.Banner %>')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 style="color: rgb(255, 255, 255);font-size: 70px"><%= blogs.Name %></h1>
+            <h2 style="color: rgb(243, 242, 242);"><%= blogs.Description %></h2>
+            <span class="meta">Posted by
+              <a href="#"><%= blogs.Author %></a>
+              on <%= blogs.date %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article style="padding-top: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <%- blogs.Content %>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+  <!---------------------------------------------------- Footer ----------------------------------------------------------------------->
+  <%- include ('partials/footer') %>
+</body>
+
+</html>

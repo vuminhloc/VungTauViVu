@@ -4,8 +4,8 @@ var bodyParser = require('body-parser');
 var session = require("express-session")
 var Passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
-var Admin = require("./model/admin.mode");
-var port = 8080;
+var Admin = require("./model/admin.model");
+var port = 4000;
 var flash =  require('connect-flash');
 var TourRoutes = require("./routes/tours.route")
 var loginRoutes = require("./routes/login.route")
@@ -43,9 +43,8 @@ app.get("/services",function(req,res){
 app.get("/",function(req,res){
     req.status(404).res.send("Not found")
 })
-app.get("/blog",function(req,res){
-    res.render("blog")
-})
+app.use("/blog",require('./routes/blog.router'));
+
 app.get("/about",function(req,res){
     res.render("about")
 })
