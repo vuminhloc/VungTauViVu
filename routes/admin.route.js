@@ -252,7 +252,6 @@ Admin_router.post('/blog/createblog',function(req,res){
         } else if (err) {
           console.log("An unknown error occurred when uploading." + err);
         }else{
-            console.log(req.file.fieldname)
             var day = new Date().getDate();
             var month = new Date().getMonth()+1
             var year = new Date().getFullYear()

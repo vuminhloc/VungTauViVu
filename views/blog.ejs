@@ -134,10 +134,13 @@
 							<div class="col-md-12">
 								<ul class="pagination">
 									<li class="disabled"><a href="#">&laquo;</a></li>
-									<li class="active"><a href="#">1</a></li>
+									<%  for(var i = 0;i <= sumpage ; i++){ %>
+										<li><a href="./blog?page=<%= i + 1 %>"><%= i +1 %></a></li>
+									<% } %>
+									<!-- <li class="active"><a href="#">1</a></li>
 									<li><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
+									<li><a href="#">4</a></li> -->
 									<li><a href="#">&raquo;</a></li>
 								</ul>
 							</div>

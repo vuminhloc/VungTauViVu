@@ -5,8 +5,14 @@ const Blog_router = express.Router();
 
 
 Blog_router.get('/',function(req,res){
+  var page = parseInt(req.query.page) || 1;
+  var perpage = 3;
+  var Start = (page - 1)* perpage;
+  var end = page * perpage;
     BlogModel.find()
     .then((result)=>{
+        var sumpage = Math.ceil((result.length/6));
+        console.log(sumpage)
         const RS = result.map(function(x){
             let now = new Date()
             let string = '';
@@ -51,7 +57,7 @@ Blog_router.get('/',function(req,res){
                     .then((nhahang)=>{
                       BlogModel.find({"Type" : "Địa Điểm"})
                       .then((diadiem)=>{
-                        res.render('blog',{blogtime:sorttimefooter,blog:result,sort:sorttime.slice(0,4),dulich:dulich,AnUong:anuong,vuichoi:vuichoi,xeco:xeco,khachsan:khachsan,nhahang:nhahang,diadiem:diadiem})
+                        res.render('blog',{blogtime:sorttimefooter,sumpage:sumpage,blog:result.slice(Start,end),sort:sorttime.slice(0,3),dulich:dulich,AnUong:anuong,vuichoi:vuichoi,xeco:xeco,khachsan:khachsan,nhahang:nhahang,diadiem:diadiem})
                       })
                     })
                   })
@@ -63,10 +69,16 @@ Blog_router.get('/',function(req,res){
 })
 
 Blog_router.get('/search',function(req,res){
+  var page = parseInt(req.query.page) || 1;
+  var perpage = 3;
+  var Start = (page - 1)* perpage;
+  var end = page * perpage;
   var regex = new RegExp(req.query.q);
   console.log( req.query.q)
   BlogModel.find({"Type" :req.query.q})
   .then((result)=>{
+    var sumpage = Math.ceil(result.length/3)
+    console.log(sumpage)
     const RS = result.map(function(x){
       let now = new Date()
       let string = '';
@@ -111,7 +123,7 @@ Blog_router.get('/search',function(req,res){
                     .then((nhahang)=>{
                       BlogModel.find({"Type" : "Địa Điểm"})
                       .then((diadiem)=>{
-                        res.render('blog',{blogtime:sorttimefooter,blog:result,sort:sorttime.slice(0,4),dulich:dulich,AnUong:anuong,vuichoi:vuichoi,xeco:xeco,khachsan:khachsan,nhahang:nhahang,diadiem:diadiem})
+                        res.render('blog',{blogtime:sorttimefooter,sumpage:sumpage,blog:result.slice(Start,end),sort:sorttime.slice(0,4),dulich:dulich,AnUong:anuong,vuichoi:vuichoi,xeco:xeco,khachsan:khachsan,nhahang:nhahang,diadiem:diadiem})
                       })
                     })
                   })
